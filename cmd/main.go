@@ -18,4 +18,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	defer func() {
+		store.Conn.Close()
+	}()
 }

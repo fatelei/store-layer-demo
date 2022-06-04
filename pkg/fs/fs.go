@@ -10,7 +10,7 @@ import (
 )
 
 type LayerStore struct {
-	conn *fuse.Conn
+	Conn *fuse.Conn
 }
 
 func NewLayerStore(mountpoint string, store *LayerStore) error {
@@ -23,7 +23,7 @@ func NewLayerStore(mountpoint string, store *LayerStore) error {
 		return err
 	}
 
-	store.conn = c
+	store.Conn = c
 	err = fs.Serve(c, store)
 	if err != nil {
 		return err
